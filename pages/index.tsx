@@ -1,9 +1,16 @@
+import { useQuery } from '@apollo/client'
 import React from 'react'
 import Card from '../components/common/Card'
 import Navbar from '../components/Navbar'
 import Sidebar from '../components/Sidebar'
+import ALL_MENU from '../graphql/query'
 
 const Home = () => {
+  const { data, error } = useQuery(ALL_MENU)
+
+  console.log(error)
+  console.log(data)
+
   return (
     <div>
       <Navbar />
