@@ -1,6 +1,6 @@
 const Navbar = () => {
   return (
-    <div className="flex justify-around pt-5">
+    <div className="flex justify-around py-5 bg-green-50">
       <div>
         <h2 className="text-green-400">Mi Super Logo</h2>
       </div>
