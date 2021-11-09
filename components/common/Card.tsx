@@ -1,7 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
+import { Menu } from '../../interface/allMenu'
 
-const Card = () => {
+const Card = ({ name, price, quantity }: Menu) => {
   return (
     <div className="border px-3 py-4 rounded hover:shadow-xl">
       <div className="relative border-2 border-green-400 rounded-2xl p-1">
@@ -13,17 +14,19 @@ const Card = () => {
         />
 
         <div className="absolute -top-3 w-full flex justify-center">
-          <span className="bg-green-400 px-3 rounded text-white">25 s/</span>
+          <span className="bg-green-400 px-3 rounded text-white">
+            {price} $
+          </span>
         </div>
       </div>
       <div className="flex flex-col">
         <div>
           <span className="text-green-400">comida:</span>
-          <span> Ceviche</span>
+          <span> {name}</span>
         </div>
         <div>
           <span className="text-green-400">cantidad:</span>
-          <span> 2</span>
+          <span> {quantity}</span>
         </div>
       </div>
       <div className="flex justify-center mt-2">
