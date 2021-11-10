@@ -15,10 +15,13 @@ const Home = () => {
       <div className="px-2 grid grid-cols-6 mt-8">
         <Sidebar />
         <div className="col-span-5 grid grid-cols-4 justify-items-center px-20 gap-y-8">
-          {data?.allMenu &&
+          {data?.allMenu ? (
             data.allMenu.map((m) => (
               <Card name={m.name} quantity={m.quantity} price={m.price} />
-            ))}
+            ))
+          ) : (
+            <h1>No hay comtenido para mostrar</h1>
+          )}
         </div>
       </div>
     </div>
