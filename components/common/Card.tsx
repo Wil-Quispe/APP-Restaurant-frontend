@@ -1,13 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 import { Menu } from '../../interface/allMenu'
-import { useMutation } from '@apollo/client'
+import { useMutation, useSubscription } from '@apollo/client'
 
 import ORDER_MENU from '../../graphql/mutation'
+import MENU from '../../graphql/subscription'
 
 const Card = ({ name, price, quantity, _id }: Menu) => {
+  const [counter, setCounter] = useState(quantity)
   const [orderMenu] = useMutation(ORDER_MENU)
+  const { data, error } = useSubscription(MENU, { variables: { menuId: _id } })
+
+  if (error) {
+    return alert('algo salio mal')
+  }
+
+  useEffect(() => {
+    data && setCounter(data?.menu)
+  }, [data])
 
   const order = async () => {
     try {
@@ -42,7 +53,7 @@ const Card = ({ name, price, quantity, _id }: Menu) => {
         </div>
         <div>
           <span className="text-green-400">cantidad:</span>
-          <span> {quantity}</span>
+          <span> {counter}</span>
         </div>
       </div>
       <div className="flex justify-center mt-2">
