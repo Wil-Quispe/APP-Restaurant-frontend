@@ -1,8 +1,24 @@
 import React from 'react'
 import Image from 'next/image'
-import { Menu } from '../../interface/allMenu'
 
-const Card = ({ name, price, quantity }: Menu) => {
+import { Menu } from '../../interface/allMenu'
+import { useMutation } from '@apollo/client'
+
+import ORDER_MENU from '../../graphql/mutation'
+
+const Card = ({ name, price, quantity, _id }: Menu) => {
+  const [orderMenu] = useMutation(ORDER_MENU)
+
+  const order = async () => {
+    try {
+      await orderMenu({ variables: { menuId: _id } })
+      return alert('Orden Exitoso')
+    } catch (err) {
+      console.log(err)
+      return alert('algo salio mal')
+    }
+  }
+
   return (
     <div className="border px-3 py-4 rounded hover:shadow-xl">
       <div className="relative border-2 border-green-400 rounded-2xl p-1">
@@ -30,7 +46,10 @@ const Card = ({ name, price, quantity }: Menu) => {
         </div>
       </div>
       <div className="flex justify-center mt-2">
-        <button className="border border-green-400 rounded-lg text-green-400 px-2 hover:bg-green-400 hover:text-white">
+        <button
+          onClick={order}
+          className="border border-green-400 rounded-lg text-green-400 px-2 hover:bg-green-400 hover:text-white"
+        >
           Ordenar
         </button>
       </div>
