@@ -1,5 +1,6 @@
 import { useMutation } from '@apollo/client'
 import React, { FormEvent } from 'react'
+import Form from '../components/common/Form'
 import Input from '../components/common/Input'
 import { NEW_MENU } from '../graphql/mutation'
 
@@ -33,10 +34,7 @@ const Admin = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <form className="flex flex-col my-10 w-4/12" onSubmit={crearMenu}>
-        <h1 className="self-center mb-5 font-bold text-2xl text-green-400">
-          Crea nueva Comida
-        </h1>
+      <Form text="Crea nueva Comida" action={crearMenu}>
         <Input text="Comida" name="name" />
         <Input text="Precio" name="price" type="number" />
         <Input text="Cantidad" name="quantity" type="number" />
@@ -44,7 +42,7 @@ const Admin = () => {
         <button className="bg-green-400 text-white py-2 px-10 rounded-lg mt-3 self-center">
           Crear
         </button>
-      </form>
+      </Form>
     </div>
   )
 }
