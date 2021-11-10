@@ -1,19 +1,34 @@
+import { useMutation } from '@apollo/client'
 import React, { FormEvent } from 'react'
 import Input from '../components/common/Input'
+import { NEW_MENU } from '../graphql/mutation'
 
 const Admin = () => {
-  const crearMenu = (e: FormEvent<HTMLFormElement>) => {
+  const [newMenu] = useMutation(NEW_MENU)
+
+  const crearMenu = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    try {
+      const elements = (name: string) => {
+        const elems = e.currentTarget.elements
+        const value = (elems.namedItem(name) as HTMLInputElement).value
+        return value
+      }
 
-    const elements = (name: string) => {
-      const elems = e.currentTarget.elements
-      const value = (elems.namedItem(name) as HTMLInputElement).value
-      return value
+      const name = elements('name')
+      const price = Number(elements('price'))
+      const quantity = Number(elements('quantity'))
+
+      await newMenu({ variables: { name, price, quantity } })
+
+      const action = e.target as HTMLFormElement
+      action.reset()
+
+      alert('Listo')
+    } catch (err) {
+      console.log(err)
+      alert('error')
     }
-
-    const name = elements('name')
-    const price = elements('price')
-    const quantity = elements('quantity')
   }
 
   return (

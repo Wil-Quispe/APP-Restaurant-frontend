@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { Menu } from '../../interface/allMenu'
 import { useMutation, useSubscription } from '@apollo/client'
 
-import ORDER_MENU from '../../graphql/mutation'
+import { ORDER_MENU } from '../../graphql/mutation'
 import MENU from '../../graphql/subscription'
 
 const Card = ({ name, price, quantity, _id }: Menu) => {
