@@ -11,3 +11,14 @@ export const NEW_MENU = gql`
     newMenu(name: $name, price: $price, quantity: $quantity)
   }
 `
+
+export const UPDATE_MENU = gql`
+  mutation UpdateMenu(
+    $menuId: ID!
+    $name: String
+    $price: Int
+    $quantity: Int
+  ) {
+    updateMenu(menuId: $menuId, name: $name, price: $price, quantity: $quantity)
+  }
+`

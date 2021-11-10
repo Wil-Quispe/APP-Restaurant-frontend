@@ -2,10 +2,12 @@ const Input = ({
   text,
   name,
   type,
+  defaultValue,
 }: {
   text: string
   name: string
   type?: string
+  defaultValue?: string | number
 }) => {
   return (
     <>
@@ -15,6 +17,7 @@ const Input = ({
           className="border rounded-lg border-green-400 text-center"
           name={name}
           type={type}
+          defaultValue={defaultValue}
         />
       </label>
     </>
