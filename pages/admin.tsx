@@ -75,6 +75,8 @@ const Admin = () => {
   }
 
   const actionDelete = async (_id: any) => {
+    return alert('No pueder Borrar estos datos son de Prueba')
+
     try {
       await deleteMenu({ variables: { menuId: _id } })
 
