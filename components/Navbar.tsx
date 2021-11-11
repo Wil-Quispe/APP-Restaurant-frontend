@@ -1,3 +1,7 @@
+import React from 'react'
+
+import Link from 'next/link'
+
 const Navbar = () => {
   return (
     <div className="flex justify-around py-5 bg-green-50">
@@ -11,9 +15,11 @@ const Navbar = () => {
         <span className="bg-green-400 text-white mr-4 py-2 px-5 rounded-lg">
           Hoy
         </span>
-        <span className="bg-green-600 text-white mr-4 py-2 px-5 rounded-lg">
-          Mañana
-        </span>
+        <Link href="/admin">
+          <a className="bg-green-600 text-white mr-4 py-2 px-5 rounded-lg">
+            Admin
+          </a>
+        </Link>
       </div>
     </div>
   )
