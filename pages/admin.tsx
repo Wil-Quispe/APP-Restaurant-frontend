@@ -26,6 +26,10 @@ const Admin = () => {
       const price = Number(elements('price'))
       const quantity = Number(elements('quantity'))
 
+      if (name === '' || price <= 0 || quantity <= 0) {
+        return alert('Campo Requerido')
+      }
+
       await newMenu({ variables: { name, price, quantity } })
 
       const action = e.target as HTMLFormElement
@@ -43,7 +47,6 @@ const Admin = () => {
 
   const actionUpdate = async (e: FormEvent<HTMLFormElement>, _id: any) => {
     e.preventDefault()
-    e.stopPropagation()
 
     try {
       const elements = (name: string) => {
@@ -55,6 +58,10 @@ const Admin = () => {
       const name = elements('name')
       const price = Number(elements('price'))
       const quantity = Number(elements('quantity'))
+
+      if (name === '' || price <= 0 || quantity <= 0) {
+        return alert('Campo Requerido')
+      }
 
       await updateMenu({ variables: { menuId: _id, name, price, quantity } })
 
