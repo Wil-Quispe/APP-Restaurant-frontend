@@ -22,3 +22,9 @@ export const UPDATE_MENU = gql`
     updateMenu(menuId: $menuId, name: $name, price: $price, quantity: $quantity)
   }
 `
+
+export const DELETE_MENU = gql`
+  mutation DeleteMenu($menuId: ID!) {
+    deleteMenu(menuId: $menuId)
+  }
+`
