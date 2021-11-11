@@ -4,7 +4,10 @@ class MyDoc extends Document {
   render(): JSX.Element {
     return (
       <Html>
-        <Head></Head>
+        <Head>
+          <link rel="icon" href="/mainlogo.png" />
+          <title>Menus Diarios Pa'ti</title>
+        </Head>
         <body>
           <Main></Main>
           <NextScript />

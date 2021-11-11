@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <div className="flex justify-around py-5 bg-green-50">
       <div>
-        <h2 className="text-green-400">Mi Super Logo</h2>
+        <img width="100" height="50" src="/mainlogo.png" alt="main logo" />
       </div>
       <div>
         <h1 className="text-2xl font-bold">Martes y Miercoles</h1>
