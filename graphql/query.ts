@@ -7,6 +7,7 @@ const ALL_MENU = gql`
       name
       price
       quantity
+      img
     }
   }
 `

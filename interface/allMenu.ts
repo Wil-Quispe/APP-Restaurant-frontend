@@ -8,4 +8,5 @@ export interface Menu {
   name: string
   price: number
   quantity: number
+  img: string
 }

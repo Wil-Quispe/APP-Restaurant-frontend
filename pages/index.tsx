@@ -23,6 +23,7 @@ const Home = () => {
                 name={m.name}
                 quantity={m.quantity}
                 price={m.price}
+                img={m.img}
               />
             ))
           ) : (
