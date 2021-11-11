@@ -3,8 +3,11 @@ import Document, { Html, Head, Main, NextScript } from 'next/document'
 class MyDoc extends Document {
   render(): JSX.Element {
     return (
-      <Html className="bg-gray-900 text-white">
-        <Head></Head>
+      <Html>
+        <Head>
+          <link rel="icon" href="/mainlogo.png" />
+          <title>Menus Diarios Pa'ti</title>
+        </Head>
         <body>
           <Main></Main>
           <NextScript />
