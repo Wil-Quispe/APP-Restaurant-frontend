@@ -92,7 +92,7 @@ const Admin = () => {
           <Input text="Precio" name="price" type="number" />
           <Input text="Cantidad" name="quantity" type="number" />
 
-          <button className="bg-green-400 text-white py-2 px-10 rounded-lg mt-3 self-center">
+          <button className="bg-green-400 text-white py-2 px-10 rounded-lg mt-3 self-center border border-green-400 hover:text-green-400 hover:bg-white">
             Crear
           </button>
         </Form>
@@ -121,7 +121,7 @@ const Admin = () => {
                 />
 
                 <div className="flex justify-center items-end">
-                  <button className="bg-green-400 text-white py-2 px-10 rounded-lg mt-3 self-center">
+                  <button className="bg-green-400 text-white py-2 px-10 rounded-lg mt-3 self-center border border-green-400 hover:text-green-400 hover:bg-white">
                     Actualizar
                   </button>
 
