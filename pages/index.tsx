@@ -1,6 +1,7 @@
 import { useQuery } from '@apollo/client'
 import React from 'react'
 import Card from '../components/common/Card'
+import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Sidebar from '../components/Sidebar'
 import ALL_MENU from '../graphql/query'
@@ -12,7 +13,7 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <div className="px-2 grid grid-cols-6 mt-8">
+      <div className="grid grid-cols-6 mt-8 pb-12">
         <Sidebar />
         <div className="col-span-5 grid grid-cols-4 justify-items-center px-20 gap-y-8">
           {data?.allMenu ? (
@@ -31,6 +32,8 @@ const Home = () => {
           )}
         </div>
       </div>
+
+      <Footer />
     </div>
   )
 }
