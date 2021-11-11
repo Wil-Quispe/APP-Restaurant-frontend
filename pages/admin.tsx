@@ -1,4 +1,5 @@
 import { useMutation, useQuery } from '@apollo/client'
+import Link from 'next/link'
 import React, { FormEvent } from 'react'
 import Form from '../components/common/Form'
 import Input from '../components/common/Input'
@@ -11,8 +12,6 @@ const Admin = () => {
   const [updateMenu] = useMutation(UPDATE_MENU)
   const [deleteMenu] = useMutation(DELETE_MENU)
   const { data, refetch } = useQuery<AllMenu>(ALL_MENU)
-
-  console.log(data)
 
   const crearMenu = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -81,69 +80,76 @@ const Admin = () => {
   }
 
   return (
-    <div className="flex flex-col items-center">
-      <Form text="Crea nueva Comida" action={crearMenu}>
-        <Input text="Comida" name="name" />
-        <Input text="Precio" name="price" type="number" />
-        <Input text="Cantidad" name="quantity" type="number" />
+    <div>
+      <Link href="/">
+        <a className="mx-2 text-green-400 text-lg hover:border-b">
+          Volver a Inicio
+        </a>
+      </Link>
+      <div className="flex flex-col items-center">
+        <Form text="Crea nueva Comida" action={crearMenu}>
+          <Input text="Comida" name="name" />
+          <Input text="Precio" name="price" type="number" />
+          <Input text="Cantidad" name="quantity" type="number" />
 
-        <button className="bg-green-400 text-white py-2 px-10 rounded-lg mt-3 self-center">
-          Crear
-        </button>
-      </Form>
+          <button className="bg-green-400 text-white py-2 px-10 rounded-lg mt-3 self-center">
+            Crear
+          </button>
+        </Form>
 
-      <>
-        <h2 className="text-2xl">Actualización de Producto</h2>
-        {data?.allMenu.length ? (
-          data.allMenu.map((m) => (
-            <Form
-              text={m.name}
-              action={(e) => actionUpdate(e, m._id)}
-              key={m._id}
-            >
-              <Input text="Comida" name="name" defaultValue={m.name} />
-              <Input
-                text="Precio"
-                name="price"
-                type="number"
-                defaultValue={m.price}
-              />
-              <Input
-                text="Cantidad"
-                name="quantity"
-                type="number"
-                defaultValue={m.quantity}
-              />
+        <>
+          <h2 className="text-2xl">Actualización de Producto</h2>
+          {data?.allMenu.length ? (
+            data.allMenu.map((m) => (
+              <Form
+                text={m.name}
+                action={(e) => actionUpdate(e, m._id)}
+                key={m._id}
+              >
+                <Input text="Comida" name="name" defaultValue={m.name} />
+                <Input
+                  text="Precio"
+                  name="price"
+                  type="number"
+                  defaultValue={m.price}
+                />
+                <Input
+                  text="Cantidad"
+                  name="quantity"
+                  type="number"
+                  defaultValue={m.quantity}
+                />
 
-              <div className="flex justify-center items-end">
-                <button className="bg-green-400 text-white py-2 px-10 rounded-lg mt-3 self-center">
-                  Actualizar
-                </button>
+                <div className="flex justify-center items-end">
+                  <button className="bg-green-400 text-white py-2 px-10 rounded-lg mt-3 self-center">
+                    Actualizar
+                  </button>
 
-                <div
-                  className="z-10"
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    actionDelete(m._id)
-                  }}
-                >
-                  <svg
-                    height="24px"
-                    viewBox="0 0 24 24"
-                    width="24px"
-                    fill="#000000"
+                  <div
+                    className="z-10"
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      actionDelete(m._id)
+                    }}
                   >
-                    <path d="M0 0h24v24H0V0z" fill="none" />
-                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5l-1-1h-5l-1 1H5v2h14V4z" />
-                  </svg>
+                    <svg
+                      height="24px"
+                      viewBox="0 0 24 24"
+                      width="24px"
+                      fill="#000000"
+                    >
+                      <path d="M0 0h24v24H0V0z" fill="none" />
+                      <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5l-1-1h-5l-1 1H5v2h14V4z" />
+                    </svg>
+                  </div>
                 </div>
-              </div>
-            </Form>
-          ))
-        ) : (
-          <h2>No hay Productos</h2>
-        )}
-      </>
+              </Form>
+            ))
+          ) : (
+            <h2>No hay Productos</h2>
+          )}
+        </>
+      </div>
     </div>
   )
 }
