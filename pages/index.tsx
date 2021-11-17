@@ -15,7 +15,7 @@ const Home = () => {
       <Navbar />
       <div className="grid grid-cols-1 lg:grid-cols-6 mt-8 pb-12">
         <Sidebar />
-        <div className="col-span-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center px-20 gap-y-8">
+        <div className="col-span-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6 justify-items-center gap-y-8 gap-x-2">
           {data?.allMenu ? (
             data.allMenu.map((m) => (
               <Card
