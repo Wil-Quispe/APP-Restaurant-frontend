@@ -31,7 +31,7 @@ const Card = ({ name, price, quantity, img, _id }: Menu) => {
   }
 
   return (
-    <div className="border px-3 py-4 rounded hover:shadow-xl">
+    <section className="border px-3 py-4 rounded hover:shadow-xl">
       <div className="relative border-2 border-green-400 rounded-2xl p-1">
         <Image src={img} width="180" height="160" className="rounded-2xl" />
 
@@ -59,7 +59,7 @@ const Card = ({ name, price, quantity, img, _id }: Menu) => {
           Ordenar
         </button>
       </div>
-    </div>
+    </section>
   )
 }
 
