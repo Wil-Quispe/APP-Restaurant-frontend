@@ -16,8 +16,6 @@ const Card = ({ name, price, quantity, img, _id }: Menu) => {
     return <>alert('algo salio mal')</>
   }
 
-  console.log(img)
-
   useEffect(() => {
     data && setCounter(data?.menu)
   }, [data])
