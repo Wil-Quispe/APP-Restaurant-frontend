@@ -13,9 +13,9 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <div className="grid grid-cols-6 mt-8 pb-12">
+      <div className="grid grid-cols-1 lg:grid-cols-6 mt-8 pb-12">
         <Sidebar />
-        <div className="col-span-5 grid grid-cols-4 justify-items-center px-20 gap-y-8">
+        <article className="mt-10 col-span-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:mt-0 2xl:grid-cols-6 justify-items-center gap-y-8 gap-x-2">
           {data?.allMenu ? (
             data.allMenu.map((m) => (
               <Card
@@ -30,7 +30,7 @@ const Home = () => {
           ) : (
             <h1>No hay comtenido para mostrar</h1>
           )}
-        </div>
+        </article>
       </div>
 
       <Footer />

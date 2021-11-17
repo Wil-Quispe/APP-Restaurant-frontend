@@ -30,6 +30,8 @@ const Admin = () => {
         return alert('Campo Requerido')
       }
 
+      return alert('No pueder Crear nuevos Productos no tiene las credenciales')
+
       await newMenu({ variables: { name, price, quantity } })
 
       const action = e.target as HTMLFormElement
@@ -62,6 +64,8 @@ const Admin = () => {
       if (name === '' || price <= 0 || quantity <= 0) {
         return alert('Campo Requerido')
       }
+
+      return alert('No pueder Crear nuevos Productos no tiene las credenciales')
 
       await updateMenu({ variables: { menuId: _id, name, price, quantity } })
 

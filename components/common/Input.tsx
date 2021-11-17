@@ -12,7 +12,7 @@ const Input = ({
   return (
     <>
       <label className="flex justify-between mb-2">
-        <span>{text}:</span>
+        <span className="mr-2">{text}:</span>
         <input
           className="border rounded-lg border-green-400 text-center"
           name={name}
