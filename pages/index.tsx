@@ -28,7 +28,7 @@ const Home = () => {
               />
             ))
           ) : (
-            <h1>No hay comtenido para mostrar</h1>
+            <h1>Cargando...</h1>
           )}
         </article>
       </div>
