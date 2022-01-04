@@ -1,15 +1,22 @@
-import React from 'react'
-
-import Link from 'next/link'
+import React, { useContext } from 'react'
+// import Link from 'next/link'
 import Image from 'next/image'
+import { NavContext } from '../context/NavState/index'
 
 const Navbar = () => {
+  const { show, setShow } = useContext(NavContext)
+
+  const showNav = () => {
+    setShow(!show)
+  }
+
   return (
     <nav className="bg-gray-800">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-end sm:justify-between h-16">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden w-3/5 justify-between">
             <button
+              onClick={showNav}
               type="button"
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
               aria-controls="mobile-menu"
@@ -127,8 +134,9 @@ const Navbar = () => {
       </div>
 
       <div
-        // hide or show mobile nav
-        className="hidden sm:hidden flex flex-col justify-center pb-7"
+        className={`${
+          show ? 'flex' : 'hidden'
+        } sm:hidden flex-col justify-center pb-7`}
         id="mobile-menu"
       >
         <div className="px-2 pt-2 pb-3 space-y-1  flex flex-col justify-center">
