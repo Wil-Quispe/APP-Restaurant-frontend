@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-// import Link from 'next/link'
+import Link from 'next/link'
 import Image from 'next/image'
 import { NavContext } from '../context/NavState/index'
 
@@ -119,12 +119,16 @@ const Navbar = () => {
                   </>
                 ) : (
                   <div className="hidden sm:block">
-                    <button className="bg-green-400 text-white py-1 px-4 rounded-lg  self-center border border-green-400 hover:text-green-400 hover:bg-transparent mr-1.5">
-                      Iniciar Secion
-                    </button>
-                    <button className="border border-green-400 rounded-lg text-green-400 px-4 py-1 hover:bg-green-400 hover:text-white">
-                      Registrarse
-                    </button>
+                    <Link href="/login">
+                      <a className="bg-green-400 text-white py-1 px-4 rounded-lg  self-center border border-green-400 hover:text-green-400 hover:bg-transparent mr-1.5">
+                        Iniciar Secion
+                      </a>
+                    </Link>
+                    <Link href="/registro">
+                      <s className="border border-green-400 rounded-lg text-green-400 px-4 py-1 hover:bg-green-400 hover:text-white">
+                        Registrarse
+                      </s>
+                    </Link>
                   </div>
                 )}
               </div>
@@ -171,12 +175,16 @@ const Navbar = () => {
         </div>
 
         <div className="flex justify-center sm:hidden">
-          <button className="bg-green-400 text-white py-1 px-4 rounded-lg  self-center border border-green-400 hover:text-green-400 hover:bg-transparent mr-1.5">
-            Iniciar Secion
-          </button>
-          <button className="border border-green-400 rounded-lg text-green-400 px-4 py-1 hover:bg-green-400 hover:text-white">
-            Registrarse
-          </button>
+          <Link href="/login">
+            <a className="bg-green-400 text-white py-1 px-4 rounded-lg  self-center border border-green-400 hover:text-green-400 hover:bg-transparent mr-1.5">
+              Iniciar Secion
+            </a>
+          </Link>
+          <Link href="/registro">
+            <s className="border border-green-400 rounded-lg text-green-400 px-4 py-1 hover:bg-green-400 hover:text-white">
+              Registrarse
+            </s>
+          </Link>
         </div>
       </div>
     </nav>
