@@ -55,16 +55,29 @@ const Navbar = () => {
               </svg>
             </button>
             <div>
-              <Image
-                src="/mainlogo.png"
-                alt="Workflow"
-                width="80"
-                height="50"
-              />
+              <Link href="/">
+                <a>
+                  <Image
+                    src="/mainlogo.png"
+                    alt="Workflow"
+                    width="80"
+                    height="50"
+                  />
+                </a>
+              </Link>
             </div>
           </div>
           <div className="hidden sm:block">
-            <Image src="/mainlogo.png" alt="Workflow" width="80" height="50" />
+            <Link href="/">
+              <a>
+                <Image
+                  src="/mainlogo.png"
+                  alt="Workflow"
+                  width="80"
+                  height="50"
+                />
+              </a>
+            </Link>
           </div>
           <div className="hidden sm:block sm:ml-6">
             <div className="flex">
