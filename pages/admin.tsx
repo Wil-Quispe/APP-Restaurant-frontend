@@ -1,6 +1,7 @@
 import { useMutation, useQuery } from '@apollo/client'
 import Link from 'next/link'
 import React, { FormEvent } from 'react'
+import ChangeImage from '../components/common/ChangeImage'
 import Form from '../components/common/Form'
 import Input from '../components/common/Input'
 import { DELETE_MENU, NEW_MENU, UPDATE_MENU } from '../graphql/mutation'
@@ -132,6 +133,8 @@ const Admin = () => {
                   type="number"
                   defaultValue={m.quantity}
                 />
+
+                <ChangeImage name={m.name} img={m.img} />
 
                 <div className="flex justify-center items-end">
                   <button className="bg-green-400 text-white py-2 px-10 rounded-lg mt-3 self-center border border-green-400 hover:text-green-400 hover:bg-white">
