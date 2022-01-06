@@ -7,6 +7,7 @@ import Input from '../components/common/Input'
 import { DELETE_MENU, NEW_MENU, UPDATE_MENU } from '../graphql/mutation'
 import ALL_MENU from '../graphql/query'
 import { AllMenu } from '../interface/allMenu'
+import Layout from './../components/Layout'
 
 const Admin = () => {
   const [newMenu] = useMutation(NEW_MENU)
@@ -94,12 +95,7 @@ const Admin = () => {
   }
 
   return (
-    <div>
-      <Link href="/">
-        <a className="mx-2 text-green-400 text-lg hover:border-b">
-          Volver a Inicio
-        </a>
-      </Link>
+    <Layout>
       <div className="flex flex-col items-center">
         <Form text="Crea nueva Comida" action={crearMenu}>
           <Input text="Comida" name="name" />
@@ -166,7 +162,7 @@ const Admin = () => {
           )}
         </>
       </div>
-    </div>
+    </Layout>
   )
 }
 

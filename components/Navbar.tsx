@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { NavContext } from '../context/NavState/index'
+import ActiveLink from './common/ActiveLink'
 
 const Navbar = () => {
   const { show, setShow } = useContext(NavContext)
@@ -81,34 +82,10 @@ const Navbar = () => {
           </div>
           <div className="hidden sm:block sm:ml-6">
             <div className="flex">
-              <a
-                href="#"
-                className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-                aria-current="page"
-              >
-                Dashboard
-              </a>
-
-              <a
-                href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-              >
-                Team
-              </a>
-
-              <a
-                href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-              >
-                Projects
-              </a>
-
-              <a
-                href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-              >
-                Calendar
-              </a>
+              <ActiveLink text="Inicio" href="/" />
+              <ActiveLink text="Costa" href="/costa" />
+              <ActiveLink text="Sierra" href="/sierra" />
+              <ActiveLink text="Selva" href="/selva" />
             </div>
           </div>
           <div className="flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
@@ -157,34 +134,10 @@ const Navbar = () => {
         id="mobile-menu"
       >
         <div className="px-2 pt-2 pb-3 space-y-1  flex flex-col justify-center">
-          <a
-            href="#"
-            className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-            aria-current="page"
-          >
-            Dashboard
-          </a>
-
-          <a
-            href="#"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-          >
-            Team
-          </a>
-
-          <a
-            href="#"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-          >
-            Projects
-          </a>
-
-          <a
-            href="#"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-          >
-            Calendar
-          </a>
+          <ActiveLink text="Inicio" href="/" />
+          <ActiveLink text="Costa" href="/costa" />
+          <ActiveLink text="Sierra" href="/sierra" />
+          <ActiveLink text="Selva" href="/selva" />
         </div>
 
         <div className="flex justify-center sm:hidden">
