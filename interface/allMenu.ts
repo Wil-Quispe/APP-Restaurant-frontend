@@ -1,5 +1,5 @@
 export interface AllMenu {
-  allMenu: Menu[]
+  [key: string]: Menu[]
 }
 
 export interface Menu {
@@ -9,4 +9,5 @@ export interface Menu {
   price: number
   quantity: number
   img: string
+  type?: string
 }
