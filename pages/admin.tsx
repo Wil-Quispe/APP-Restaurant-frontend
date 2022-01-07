@@ -5,7 +5,7 @@ import ChangeImage from '../components/common/ChangeImage'
 import Form from '../components/common/Form'
 import Input from '../components/common/Input'
 import { DELETE_MENU, NEW_MENU, UPDATE_MENU } from '../graphql/mutation'
-import ALL_MENU from '../graphql/query'
+import { ALL_MENU } from '../graphql/query'
 import { AllMenu } from '../interface/allMenu'
 import Layout from './../components/Layout'
 

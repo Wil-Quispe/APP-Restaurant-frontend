@@ -1,9 +1,11 @@
 import { useRouter } from 'next/router'
+import { MouseEvent } from 'react'
 
 const ActiveLink = ({ text, href }: { text: string; href: string }) => {
   const router = useRouter()
 
-  const handleClick = () => {
+  const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
     router.push(href)
   }
   return (
