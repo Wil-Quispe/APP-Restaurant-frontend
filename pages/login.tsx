@@ -1,13 +1,38 @@
+import { useMutation } from '@apollo/client'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { FormEvent } from 'react'
 import Form from '../components/common/Form'
 import Input from '../components/common/Input'
 import Layout from '../components/Layout'
+import { LOGIN } from '../graphql/mutation'
 
 const login = () => {
+  const router = useRouter()
+  const [logIn] = useMutation(LOGIN)
   const login = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log('peu')
+
+    const elements = (name: string) => {
+      const elems = e.currentTarget.elements
+      const value = (elems.namedItem(name) as HTMLInputElement).value
+      return value
+    }
+
+    const email = elements('email')
+    const password = elements('password')
+
+    const res = await logIn({ variables: { email, password } })
+
+    if (res.data.logIn === '1' || res.data.logIn === '100') {
+      if (typeof window !== undefined) {
+        localStorage.setItem('key', res.data.logIn)
+      }
+      router.push('/')
+      return
+    }
+
+    alert('Algo salio mal')
   }
   return (
     <Layout>
