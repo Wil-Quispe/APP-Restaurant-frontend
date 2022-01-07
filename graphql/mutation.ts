@@ -28,3 +28,9 @@ export const DELETE_MENU = gql`
     deleteMenu(menuId: $menuId)
   }
 `
+
+export const SIGNUP = gql`
+  mutation SignUp($name: String!, $email: String!, $password: String!) {
+    signUp(name: $name, email: $email, password: $password)
+  }
+`
