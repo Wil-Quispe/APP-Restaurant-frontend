@@ -15,7 +15,6 @@ const Costa = () => {
     variables: { type: query.typeProduct },
   })
 
-  console.log({ data })
   if (data?.typeMenu.length === 0)
     return (
       <Layout>

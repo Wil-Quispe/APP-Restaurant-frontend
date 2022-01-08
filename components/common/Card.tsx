@@ -25,7 +25,6 @@ const Card = ({ name, price, quantity, img, _id }: Menu) => {
       await orderMenu({ variables: { menuId: _id } })
       return alert('Orden Exitoso')
     } catch (err) {
-      console.log(err)
       return alert('algo salio mal')
     }
   }

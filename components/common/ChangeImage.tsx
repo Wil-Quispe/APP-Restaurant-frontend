@@ -31,10 +31,8 @@ const ChangeImage = ({ img, name }: { img: string; name: string }) => {
       const file = await res.json()
 
       setImageUploaded(file.secure_url)
-
-      console.log(file)
     } catch (err) {
-      console.log(err)
+      alert('Algo salio mal')
     }
   }
 

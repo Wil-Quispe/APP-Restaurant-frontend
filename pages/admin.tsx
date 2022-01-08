@@ -44,7 +44,6 @@ const Admin = () => {
       action.reset()
       alert('Listo')
     } catch (err) {
-      console.log(err)
       alert('error')
     }
   }
@@ -75,7 +74,6 @@ const Admin = () => {
 
       alert('Actualizado broder')
     } catch (err) {
-      console.log(err)
       alert('error')
     }
   }
@@ -89,7 +87,6 @@ const Admin = () => {
       refetch()
       alert('Hecho')
     } catch (err) {
-      console.log(err)
       return alert('error')
     }
   }
