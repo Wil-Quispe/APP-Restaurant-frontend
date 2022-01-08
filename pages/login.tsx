@@ -26,7 +26,7 @@ const login = () => {
 
     if (res.data.logIn === '1' || res.data.logIn === '100') {
       if (typeof window !== undefined) {
-        localStorage.setItem('key', res.data.logIn)
+        localStorage.setItem('liveKeyAuth', res.data.logIn)
       }
       router.push('/')
       return

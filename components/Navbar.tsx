@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { NavContext } from '../context/NavState/index'
@@ -6,6 +6,14 @@ import ActiveLink from './common/ActiveLink'
 
 const Navbar = () => {
   const { show, setShow } = useContext(NavContext)
+  const [loggued, setLoggued] = useState(false)
+
+  useEffect(() => {
+    const liveKeyAuth = localStorage.getItem('liveKeyAuth')
+    if (liveKeyAuth === '1' || liveKeyAuth === '100') {
+      setLoggued(true)
+    }
+  }, [])
 
   const showNav = () => {
     setShow(!show)
@@ -91,7 +99,7 @@ const Navbar = () => {
           <div className="flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <div className="ml-3 relative">
               <div>
-                {true ? (
+                {loggued ? (
                   <>
                     <button
                       type="button"
@@ -140,18 +148,20 @@ const Navbar = () => {
           <ActiveLink text="Selva" href="/selva" />
         </div>
 
-        <div className="flex justify-center sm:hidden">
-          <Link href="/login">
-            <a className="bg-green-400 text-white py-1 px-4 rounded-lg  self-center border border-green-400 hover:text-green-400 hover:bg-transparent mr-1.5">
-              Iniciar Secion
-            </a>
-          </Link>
-          <Link href="/registro">
-            <s className="border border-green-400 rounded-lg text-green-400 px-4 py-1 hover:bg-green-400 hover:text-white">
-              Registrarse
-            </s>
-          </Link>
-        </div>
+        {!loggued && (
+          <div className="flex justify-center sm:hidden">
+            <Link href="/login">
+              <a className="bg-green-400 text-white py-1 px-4 rounded-lg  self-center border border-green-400 hover:text-green-400 hover:bg-transparent mr-1.5">
+                Iniciar Secion
+              </a>
+            </Link>
+            <Link href="/registro">
+              <s className="border border-green-400 rounded-lg text-green-400 px-4 py-1 hover:bg-green-400 hover:text-white">
+                Registrarse
+              </s>
+            </Link>
+          </div>
+        )}
       </div>
     </nav>
   )
