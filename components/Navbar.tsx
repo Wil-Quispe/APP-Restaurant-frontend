@@ -3,10 +3,12 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { NavContext } from '../context/NavState/index'
 import ActiveLink from './common/ActiveLink'
+import { useRouter } from 'next/router'
 
 const Navbar = () => {
   const { show, setShow } = useContext(NavContext)
   const [loggued, setLoggued] = useState(false)
+  const router = useRouter()
 
   useEffect(() => {
     const liveKeyAuth = localStorage.getItem('liveKeyAuth')
@@ -14,6 +16,19 @@ const Navbar = () => {
       setLoggued(true)
     }
   }, [])
+
+  const goTo = () => {
+    const liveKeyAuth = localStorage.getItem('liveKeyAuth')
+    if (liveKeyAuth === '1') {
+      router.push('/usuario')
+      return
+    }
+    if (liveKeyAuth === '100') {
+      router.push('/admin')
+      return
+    }
+    router.push('/')
+  }
 
   const showNav = () => {
     setShow(!show)
@@ -101,19 +116,14 @@ const Navbar = () => {
               <div>
                 {loggued ? (
                   <>
-                    <button
-                      type="button"
-                      className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-                      id="user-menu-button"
-                      aria-expanded="false"
-                      aria-haspopup="true"
+                    <a
+                      onClick={goTo}
+                      className="bg-gray-800 flex text-sm rounded-full "
                     >
-                      <img
-                        className="h-8 w-8 rounded-full"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt="imagen usuario"
-                      />
-                    </button>
+                      <span className="flex justify-center items-center hover:cursor-pointer border-white border-2 bg-green-400 text-white h-10 w-10 rounded-full">
+                        W
+                      </span>
+                    </a>
                   </>
                 ) : (
                   <div className="hidden sm:block">
