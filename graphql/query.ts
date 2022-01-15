@@ -25,3 +25,12 @@ export const TYPE_MENU = gql`
     }
   }
 `
+
+export const USER = gql`
+  query User($_id: ID!) {
+    user(_id: $_id) {
+      name
+      email
+    }
+  }
+`

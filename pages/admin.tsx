@@ -1,11 +1,12 @@
 import { useMutation, useQuery } from '@apollo/client'
 import Link from 'next/link'
+import router from 'next/router'
 import React, { FormEvent } from 'react'
 import ChangeImage from '../components/common/ChangeImage'
 import Form from '../components/common/Form'
 import Input from '../components/common/Input'
 import { DELETE_MENU, NEW_MENU, UPDATE_MENU } from '../graphql/mutation'
-import { ALL_MENU } from '../graphql/query'
+import { ALL_MENU, USER } from '../graphql/query'
 import { AllMenu } from '../interface/allMenu'
 import Layout from './../components/Layout'
 
@@ -14,6 +15,9 @@ const Admin = () => {
   const [updateMenu] = useMutation(UPDATE_MENU)
   const [deleteMenu] = useMutation(DELETE_MENU)
   const { data, refetch } = useQuery<AllMenu>(ALL_MENU)
+  const { data: dataUser } = useQuery(USER, {
+    variables: { _id: '61d8c5dbdf7b758655a8c098' },
+  })
 
   const crearMenu = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -91,9 +95,43 @@ const Admin = () => {
     }
   }
 
+  const logOut = () => {
+    localStorage.removeItem('liveKeyAuth')
+    router.push('/')
+  }
+
   return (
     <Layout>
       <div className="flex flex-col items-center">
+        <div className="flex justify-center items-center h-80 w-full">
+          <div className="flex flex-col sm:flex-row w-10/12 h-64 justify-around items-center bg-gray-100 rounded-lg">
+            <div className="flex">
+              <span className="flex justify-center items-center hover:cursor-pointer border-white border-2 bg-green-400 text-white h-10 w-10 rounded-full">
+                {dataUser?.user.name.split('')[0]}
+              </span>
+              <h3 className="ml-1 mt-2">Hola {dataUser?.user.name}</h3>
+            </div>
+            <div className="flex flex-col justify-center items-center">
+              <div className="flex flex-col sm:flex-row justify-center items-center">
+                <h4 className="text-green-400 text-xl mr-3 ">Nombre</h4>
+                <h5 className="text-xl">{dataUser?.user.name}</h5>
+              </div>
+              <div className="flex flex-col sm:flex-row justify-center items-center">
+                <h4 className="text-green-400 text-xl mr-3 ">Correo</h4>
+                <h5 className="text-xl">{dataUser?.user.email}</h5>
+              </div>
+            </div>
+            <div>
+              <a
+                onClick={logOut}
+                className="bg-blue-300 text-white py-1 px-4 rounded-lg  self-center border border-blue-300 hover:text-blue-300 hover:bg-transparent mr-1.5"
+              >
+                Cerrar Sesion
+              </a>
+            </div>
+          </div>
+        </div>
+
         <Form text="Crea nueva Comida" action={crearMenu}>
           <Input text="Comida" name="name" />
           <Input text="Precio" name="price" type="number" />
