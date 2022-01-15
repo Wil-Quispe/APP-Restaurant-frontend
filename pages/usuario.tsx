@@ -1,7 +1,12 @@
+import { useQuery } from '@apollo/client'
 import router from 'next/router'
 import Layout from '../components/Layout'
+import { USER } from '../graphql/query'
 
 const User = () => {
+  const { data: dataUser } = useQuery(USER, {
+    variables: { _id: '61d8c5dbdf7b758655a8c098' },
+  })
   const logOut = () => {
     localStorage.removeItem('liveKeyAuth')
     router.push('/')
@@ -13,18 +18,21 @@ const User = () => {
         <div className="flex flex-col sm:flex-row w-10/12 h-64 justify-around items-center bg-gray-100 rounded-lg">
           <div className="flex">
             <span className="flex justify-center items-center hover:cursor-pointer border-white border-2 bg-green-400 text-white h-10 w-10 rounded-full">
-              W
+              {dataUser?.user.name.split('')[0]}
             </span>
-            <h3 className="ml-1 mt-2">Hola Wilinston</h3>
+            <h3 className="ml-1 mt-2">
+              Hola
+              {dataUser?.user.name}
+            </h3>
           </div>
           <div className="flex flex-col justify-center items-center">
-            <div className="flex">
+            <div className="flex flex-col sm:flex-row justify-center items-center">
               <h4 className="text-green-400 text-xl mr-3 ">Nombre</h4>
-              <h5 className="text-xl">Wilinston</h5>
+              <h5 className="text-xl">{dataUser?.user.name}</h5>
             </div>
-            <div className="flex">
+            <div className="flex flex-col sm:flex-row justify-center items-center">
               <h4 className="text-green-400 text-xl mr-3 ">Correo</h4>
-              <h5 className="text-xl">Wilinston</h5>
+              <h5 className="text-xl">{dataUser?.user.email}</h5>
             </div>
           </div>
           <div>
