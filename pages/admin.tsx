@@ -1,7 +1,7 @@
 import { useMutation, useQuery } from '@apollo/client'
 import Link from 'next/link'
 import router from 'next/router'
-import React, { FormEvent } from 'react'
+import React, { FormEvent, useEffect, useState } from 'react'
 import ChangeImage from '../components/common/ChangeImage'
 import Form from '../components/common/Form'
 import Input from '../components/common/Input'
@@ -11,13 +11,20 @@ import { AllMenu } from '../interface/allMenu'
 import Layout from './../components/Layout'
 
 const Admin = () => {
+  const [token, setToken] = useState<any>()
   const [newMenu] = useMutation(NEW_MENU)
   const [updateMenu] = useMutation(UPDATE_MENU)
   const [deleteMenu] = useMutation(DELETE_MENU)
   const { data, refetch } = useQuery<AllMenu>(ALL_MENU)
   const { data: dataUser } = useQuery(USER, {
-    variables: { _id: '61d8c5dbdf7b758655a8c098' },
+    variables: { _id: token },
   })
+
+  useEffect(() => {
+    const liveKeyAuth = localStorage.getItem('liveKeyAuth')
+    const id = liveKeyAuth?.split('-')[1]
+    setToken(id)
+  }, [])
 
   const crearMenu = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()

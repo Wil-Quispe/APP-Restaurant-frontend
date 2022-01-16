@@ -1,11 +1,20 @@
 import { useQuery } from '@apollo/client'
 import router from 'next/router'
+import { useEffect, useState } from 'react'
 import Layout from '../components/Layout'
 import { USER } from '../graphql/query'
 
 const User = () => {
+  const [token, setToken] = useState<any>()
+
+  useEffect(() => {
+    const liveKeyAuth = localStorage.getItem('liveKeyAuth')
+    const id = liveKeyAuth?.split('-')[1]
+    setToken(id)
+  }, [])
+
   const { data: dataUser } = useQuery(USER, {
-    variables: { _id: '61d8c5dbdf7b758655a8c098' },
+    variables: { _id: token },
   })
   const logOut = () => {
     localStorage.removeItem('liveKeyAuth')

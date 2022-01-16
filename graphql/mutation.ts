@@ -31,12 +31,18 @@ export const DELETE_MENU = gql`
 
 export const SIGNUP = gql`
   mutation SignUp($name: String!, $email: String!, $password: String!) {
-    signUp(name: $name, email: $email, password: $password)
+    signUp(name: $name, email: $email, password: $password) {
+      signUp
+      token
+    }
   }
 `
 
 export const LOGIN = gql`
   mutation LogIn($email: String!, $password: String!) {
-    logIn(email: $email, password: $password)
+    logIn(email: $email, password: $password) {
+      logIn
+      token
+    }
   }
 `

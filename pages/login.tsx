@@ -24,9 +24,12 @@ const login = () => {
 
     const res = await logIn({ variables: { email, password } })
 
-    if (res.data.logIn === '1' || res.data.logIn === '100') {
+    if (res.data.logIn.logIn === '1' || res.data.logIn.logIn === '100') {
       if (typeof window !== undefined) {
-        localStorage.setItem('liveKeyAuth', res.data.logIn)
+        localStorage.setItem(
+          'liveKeyAuth',
+          `${res.data.logIn.logIn}-${res.data.logIn.token}`,
+        )
       }
       router.push('/')
       return

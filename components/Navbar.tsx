@@ -12,18 +12,23 @@ const Navbar = () => {
 
   useEffect(() => {
     const liveKeyAuth = localStorage.getItem('liveKeyAuth')
-    if (liveKeyAuth === '1' || liveKeyAuth === '100') {
+
+    const condition = liveKeyAuth?.split('-')[0]
+
+    if (condition === '1' || condition === '100') {
       setLoggued(true)
     }
   }, [])
 
   const goTo = () => {
     const liveKeyAuth = localStorage.getItem('liveKeyAuth')
-    if (liveKeyAuth === '1') {
+    const condition = liveKeyAuth?.split('-')[0]
+
+    if (condition === '1') {
       router.push('/usuario')
       return
     }
-    if (liveKeyAuth === '100') {
+    if (condition === '100') {
       router.push('/admin')
       return
     }

@@ -26,9 +26,9 @@ const registro = () => {
 
     const res = await signUp({ variables: { name, email, password } })
 
-    if (res.data.signUp) {
+    if (res.data.signUp.signUp) {
       if (typeof window !== undefined) {
-        localStorage.setItem('liveKeyAuth', '1')
+        localStorage.setItem('liveKeyAuth', `1-${res.data.signUp.token}`)
       }
       router.push('/')
       return
