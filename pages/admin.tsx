@@ -1,5 +1,4 @@
 import { useMutation, useQuery } from '@apollo/client'
-import Link from 'next/link'
 import router from 'next/router'
 import React, { FormEvent, useEffect, useState } from 'react'
 import ChangeImage from '../components/common/ChangeImage'
@@ -23,8 +22,10 @@ const Admin = () => {
   useEffect(() => {
     const liveKeyAuth = localStorage.getItem('liveKeyAuth')
     const id = liveKeyAuth?.split('-')[1]
+    sessionStorage.setItem('liveKeyName', dataUser?.user.name)
+
     setToken(id)
-  }, [])
+  }, [dataUser])
 
   const crearMenu = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()

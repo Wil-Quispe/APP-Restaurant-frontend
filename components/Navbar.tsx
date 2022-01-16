@@ -126,7 +126,12 @@ const Navbar = () => {
                       className="bg-gray-800 flex text-sm rounded-full "
                     >
                       <span className="flex justify-center items-center hover:cursor-pointer border-white border-2 bg-green-400 text-white h-10 w-10 rounded-full">
-                        W
+                        {
+                          sessionStorage
+                            .getItem('liveKeyName')
+                            ?.split(' ')[0]
+                            .split('')[0]
+                        }
                       </span>
                     </a>
                   </>

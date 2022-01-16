@@ -6,16 +6,18 @@ import { USER } from '../graphql/query'
 
 const User = () => {
   const [token, setToken] = useState<any>()
+  const { data: dataUser } = useQuery(USER, {
+    variables: { _id: token },
+  })
 
   useEffect(() => {
     const liveKeyAuth = localStorage.getItem('liveKeyAuth')
     const id = liveKeyAuth?.split('-')[1]
-    setToken(id)
-  }, [])
+    sessionStorage.setItem('liveKeyName', dataUser?.user.name)
 
-  const { data: dataUser } = useQuery(USER, {
-    variables: { _id: token },
-  })
+    setToken(id)
+  }, [dataUser])
+
   const logOut = () => {
     localStorage.removeItem('liveKeyAuth')
     router.push('/')
