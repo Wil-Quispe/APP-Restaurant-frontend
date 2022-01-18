@@ -18,8 +18,15 @@ export const UPDATE_MENU = gql`
     $name: String
     $price: Int
     $quantity: Int
+    $img: String
   ) {
-    updateMenu(menuId: $menuId, name: $name, price: $price, quantity: $quantity)
+    updateMenu(
+      menuId: $menuId
+      name: $name
+      price: $price
+      quantity: $quantity
+      img: $img
+    )
   }
 `
 

@@ -1,10 +1,21 @@
-import { ChangeEvent, HTMLAttributes, useRef, useState } from 'react'
+import { useMutation } from '@apollo/client'
+import { ChangeEvent, useRef, useState } from 'react'
+import { UPDATE_MENU } from '../../graphql/mutation'
 
-const ChangeImage = ({ img, name }: { img: string; name: string }) => {
+const ChangeImage = ({
+  img,
+  name,
+  _id,
+}: {
+  img: string
+  name: string
+  _id: string
+}) => {
   const [deleteImg, setDeleteImg] = useState(false)
   const [imgDelete, setImgDelete] = useState(false)
   const [imageUploaded, setImageUploaded] = useState<string>()
   const imgRef = useRef({} as HTMLDivElement)
+  const [updateMenu] = useMutation(UPDATE_MENU)
 
   const showBtn = () => {
     setDeleteImg(!deleteImg)
@@ -29,6 +40,8 @@ const ChangeImage = ({ img, name }: { img: string; name: string }) => {
         { method: 'POST', body: formData },
       )
       const file = await res.json()
+
+      await updateMenu({ variables: { menuId: _id, img: file.secure_url } })
 
       setImageUploaded(file.secure_url)
     } catch (err) {

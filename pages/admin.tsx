@@ -173,7 +173,7 @@ const Admin = () => {
                   defaultValue={m.quantity}
                 />
 
-                <ChangeImage name={m.name} img={m.img} />
+                <ChangeImage _id={m._id} name={m.name} img={m.img} />
 
                 <div className="flex justify-center items-end">
                   <button className="bg-green-400 text-white py-2 px-10 rounded-lg mt-3 self-center border border-green-400 hover:text-green-400 hover:bg-white">

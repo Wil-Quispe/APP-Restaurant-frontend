@@ -4,7 +4,7 @@ export interface AllMenu {
 
 export interface Menu {
   __typename?: string
-  _id?: string
+  _id: string
   name: string
   price: number
   quantity: number
