@@ -7,8 +7,20 @@ export const ORDER_MENU = gql`
 `
 
 export const NEW_MENU = gql`
-  mutation NewMenu($name: String!, $price: Int!, $quantity: Int!) {
-    newMenu(name: $name, price: $price, quantity: $quantity)
+  mutation NewMenu(
+    $name: String!
+    $type: String!
+    $price: Int!
+    $quantity: Int!
+    $img: String!
+  ) {
+    newMenu(
+      name: $name
+      type: $type
+      price: $price
+      quantity: $quantity
+      img: $img
+    )
   }
 `
 

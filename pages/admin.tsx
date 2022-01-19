@@ -1,6 +1,6 @@
 import { useMutation, useQuery } from '@apollo/client'
 import router from 'next/router'
-import React, { FormEvent, useEffect, useState } from 'react'
+import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import ChangeImage from '../components/common/ChangeImage'
 import Form from '../components/common/Form'
 import Input from '../components/common/Input'
@@ -10,6 +10,7 @@ import { AllMenu } from '../interface/allMenu'
 import Layout from './../components/Layout'
 
 const Admin = () => {
+  const [imageUploaded, setImageUploaded] = useState('')
   const [token, setToken] = useState<any>()
   const [newMenu] = useMutation(NEW_MENU)
   const [updateMenu] = useMutation(UPDATE_MENU)
@@ -39,14 +40,16 @@ const Admin = () => {
       const name = elements('name')
       const price = Number(elements('price'))
       const quantity = Number(elements('quantity'))
+      const type = elements('type')
 
       if (name === '' || price <= 0 || quantity <= 0) {
         return alert('Campo Requerido')
       }
 
-      return alert('No pueder Crear nuevos Productos no tiene las credenciales')
-
-      await newMenu({ variables: { name, price, quantity } })
+      // return alert('No pueder Crear nuevos Productos no tiene las credenciales')
+      const res = await newMenu({
+        variables: { name, type, price, quantity, img: imageUploaded },
+      })
 
       const action = e.target as HTMLFormElement
 
@@ -56,6 +59,8 @@ const Admin = () => {
       action.reset()
       alert('Listo')
     } catch (err) {
+      console.log(err)
+
       alert('error')
     }
   }
@@ -108,6 +113,26 @@ const Admin = () => {
     router.push('/')
   }
 
+  const onChangeImage = async (e: ChangeEvent<any>) => {
+    try {
+      const img = e.target.files[0]
+
+      const formData = new FormData()
+      formData.append('file', img)
+      formData.append('upload_preset', 'dphhkpiyp')
+
+      const res = await fetch(
+        'https://api.cloudinary.com/v1_1/dphhkpiyp/image/upload',
+        { method: 'POST', body: formData },
+      )
+      const file = await res.json()
+
+      setImageUploaded(file.secure_url)
+    } catch (err) {
+      alert('Algo salio mal')
+    }
+  }
+
   return (
     <Layout>
       <div className="flex flex-col items-center">
@@ -142,8 +167,17 @@ const Admin = () => {
 
         <Form text="Crea nueva Comida" action={crearMenu}>
           <Input text="Comida" name="name" />
+          <Input text="Tipo" name="type" />
           <Input text="Precio" name="price" type="number" />
           <Input text="Cantidad" name="quantity" type="number" />
+          <div className="flex justify-center">
+            <input
+              className="bg-green-400 text-white rounded w-3/4  "
+              name="img"
+              type="file"
+              onChange={onChangeImage}
+            />
+          </div>
 
           <button className="bg-green-400 text-white py-2 px-10 rounded-lg mt-3 self-center border border-green-400 hover:text-green-400 hover:bg-white">
             Crear
