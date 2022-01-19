@@ -1,17 +1,32 @@
 import { useMutation, useQuery } from '@apollo/client'
-import Link from 'next/link'
-import React, { FormEvent } from 'react'
+import router from 'next/router'
+import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react'
+import ChangeImage from '../components/common/ChangeImage'
 import Form from '../components/common/Form'
 import Input from '../components/common/Input'
 import { DELETE_MENU, NEW_MENU, UPDATE_MENU } from '../graphql/mutation'
-import ALL_MENU from '../graphql/query'
+import { ALL_MENU, USER } from '../graphql/query'
 import { AllMenu } from '../interface/allMenu'
+import Layout from './../components/Layout'
 
 const Admin = () => {
+  const [imageUploaded, setImageUploaded] = useState('')
+  const [token, setToken] = useState<any>()
   const [newMenu] = useMutation(NEW_MENU)
   const [updateMenu] = useMutation(UPDATE_MENU)
   const [deleteMenu] = useMutation(DELETE_MENU)
   const { data, refetch } = useQuery<AllMenu>(ALL_MENU)
+  const { data: dataUser } = useQuery(USER, {
+    variables: { _id: token },
+  })
+
+  useEffect(() => {
+    const liveKeyAuth = localStorage.getItem('liveKeyAuth')
+    const id = liveKeyAuth?.split('-')[1]
+    sessionStorage.setItem('liveKeyName', dataUser?.user.name)
+
+    setToken(id)
+  }, [dataUser])
 
   const crearMenu = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -25,14 +40,16 @@ const Admin = () => {
       const name = elements('name')
       const price = Number(elements('price'))
       const quantity = Number(elements('quantity'))
+      const type = elements('type')
 
       if (name === '' || price <= 0 || quantity <= 0) {
         return alert('Campo Requerido')
       }
 
-      return alert('No pueder Crear nuevos Productos no tiene las credenciales')
-
-      await newMenu({ variables: { name, price, quantity } })
+      // return alert('No pueder Crear nuevos Productos no tiene las credenciales')
+      const res = await newMenu({
+        variables: { name, type, price, quantity, img: imageUploaded },
+      })
 
       const action = e.target as HTMLFormElement
 
@@ -43,6 +60,7 @@ const Admin = () => {
       alert('Listo')
     } catch (err) {
       console.log(err)
+
       alert('error')
     }
   }
@@ -73,7 +91,6 @@ const Admin = () => {
 
       alert('Actualizado broder')
     } catch (err) {
-      console.log(err)
       alert('error')
     }
   }
@@ -87,23 +104,80 @@ const Admin = () => {
       refetch()
       alert('Hecho')
     } catch (err) {
-      console.log(err)
       return alert('error')
     }
   }
 
+  const logOut = () => {
+    localStorage.removeItem('liveKeyAuth')
+    router.push('/')
+  }
+
+  const onChangeImage = async (e: ChangeEvent<any>) => {
+    try {
+      const img = e.target.files[0]
+
+      const formData = new FormData()
+      formData.append('file', img)
+      formData.append('upload_preset', 'dphhkpiyp')
+
+      const res = await fetch(
+        'https://api.cloudinary.com/v1_1/dphhkpiyp/image/upload',
+        { method: 'POST', body: formData },
+      )
+      const file = await res.json()
+
+      setImageUploaded(file.secure_url)
+    } catch (err) {
+      alert('Algo salio mal')
+    }
+  }
+
   return (
-    <div>
-      <Link href="/">
-        <a className="mx-2 text-green-400 text-lg hover:border-b">
-          Volver a Inicio
-        </a>
-      </Link>
+    <Layout>
       <div className="flex flex-col items-center">
+        <div className="flex justify-center items-center h-80 w-full">
+          <div className="flex flex-col sm:flex-row w-10/12 h-64 justify-around items-center bg-gray-100 rounded-lg">
+            <div className="flex">
+              <span className="flex justify-center items-center hover:cursor-pointer border-white border-2 bg-green-400 text-white h-10 w-10 rounded-full">
+                {dataUser?.user.name.split('')[0]}
+              </span>
+              <h3 className="ml-1 mt-2">Hola {dataUser?.user.name}</h3>
+            </div>
+            <div className="flex flex-col justify-center items-center">
+              <div className="flex flex-col sm:flex-row justify-center items-center">
+                <h4 className="text-green-400 text-xl mr-3 ">Nombre</h4>
+                <h5 className="text-xl">{dataUser?.user.name}</h5>
+              </div>
+              <div className="flex flex-col sm:flex-row justify-center items-center">
+                <h4 className="text-green-400 text-xl mr-3 ">Correo</h4>
+                <h5 className="text-xl">{dataUser?.user.email}</h5>
+              </div>
+            </div>
+            <div>
+              <a
+                onClick={logOut}
+                className="bg-blue-300 text-white py-1 px-4 rounded-lg  self-center border border-blue-300 hover:text-blue-300 hover:bg-transparent mr-1.5"
+              >
+                Cerrar Sesion
+              </a>
+            </div>
+          </div>
+        </div>
+
         <Form text="Crea nueva Comida" action={crearMenu}>
           <Input text="Comida" name="name" />
+          <Input text="Tipo" name="type" />
           <Input text="Precio" name="price" type="number" />
           <Input text="Cantidad" name="quantity" type="number" />
+          <div className="flex justify-center">
+            <input
+              className="bg-green-400 text-white rounded w-3/4  "
+              name="img"
+              type="file"
+              onChange={onChangeImage}
+            />
+          </div>
 
           <button className="bg-green-400 text-white py-2 px-10 rounded-lg mt-3 self-center border border-green-400 hover:text-green-400 hover:bg-white">
             Crear
@@ -132,6 +206,8 @@ const Admin = () => {
                   type="number"
                   defaultValue={m.quantity}
                 />
+
+                <ChangeImage _id={m._id} name={m.name} img={m.img} />
 
                 <div className="flex justify-center items-end">
                   <button className="bg-green-400 text-white py-2 px-10 rounded-lg mt-3 self-center border border-green-400 hover:text-green-400 hover:bg-white">
@@ -163,7 +239,7 @@ const Admin = () => {
           )}
         </>
       </div>
-    </div>
+    </Layout>
   )
 }
 

@@ -1,11 +1,13 @@
 const Input = ({
   text,
   name,
+  required,
   type,
   defaultValue,
 }: {
   text: string
   name: string
+  required?: boolean
   type?: string
   defaultValue?: string | number
 }) => {
@@ -18,6 +20,7 @@ const Input = ({
           name={name}
           type={type}
           defaultValue={defaultValue}
+          required={required || true}
         />
       </label>
     </>

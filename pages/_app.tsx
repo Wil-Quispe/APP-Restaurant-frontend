@@ -9,6 +9,7 @@ import { WebSocketLink } from '@apollo/client/link/ws'
 import { getMainDefinition } from '@apollo/client/utilities'
 import { AppProps } from 'next/app'
 import 'tailwindcss/tailwind.css'
+import NavProvider from '../context/NavState'
 
 const httpLink = new HttpLink({
   uri: `${process.env.NEXT_PUBLIC_URI}`,
@@ -44,7 +45,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <ApolloProvider client={client}>
-        <Component {...pageProps} />
+        <NavProvider>
+          <Component {...pageProps} />
+        </NavProvider>
       </ApolloProvider>
     </>
   )
