@@ -43,7 +43,7 @@ const login = () => {
         <div className="flex flex-col items-center">
           <Form action={login} text="Iniciar Sesion">
             <Input text="Correo" name="email" />
-            <Input text="Contraseña" name="password" />
+            <Input text="Contraseña" name="password" type="password" />
             <button className="bg-green-400 text-white py-1 px-4 rounded-lg  self-center border border-green-400 hover:text-green-400 hover:bg-transparent mr-1.5">
               Iniciar Secion
             </button>

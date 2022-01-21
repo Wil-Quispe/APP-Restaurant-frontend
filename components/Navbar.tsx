@@ -143,9 +143,9 @@ const Navbar = () => {
                       </a>
                     </Link>
                     <Link href="/registro">
-                      <s className="border border-green-400 rounded-lg text-green-400 px-4 py-1 hover:bg-green-400 hover:text-white">
+                      <a className="border border-green-400 rounded-lg text-green-400 px-4 py-1 hover:bg-green-400 hover:text-white">
                         Registrarse
-                      </s>
+                      </a>
                     </Link>
                   </div>
                 )}
@@ -176,9 +176,9 @@ const Navbar = () => {
               </a>
             </Link>
             <Link href="/registro">
-              <s className="border border-green-400 rounded-lg text-green-400 px-4 py-1 hover:bg-green-400 hover:text-white">
+              <a className="border border-green-400 rounded-lg text-green-400 px-4 py-1 hover:bg-green-400 hover:text-white">
                 Registrarse
-              </s>
+              </a>
             </Link>
           </div>
         )}
