@@ -10,6 +10,7 @@ import { getMainDefinition } from '@apollo/client/utilities'
 import { AppProps } from 'next/app'
 import 'tailwindcss/tailwind.css'
 import NavProvider from '../context/NavState'
+import '../styles/index.css'
 
 const httpLink = new HttpLink({
   uri: `${process.env.NEXT_PUBLIC_URI}`,

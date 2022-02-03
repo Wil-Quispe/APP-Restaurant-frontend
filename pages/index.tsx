@@ -1,40 +1,37 @@
-import { useQuery } from '@apollo/client'
+import Link from 'next/link'
 import React from 'react'
-import Card from '../components/common/Card'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
-import Sidebar from '../components/Sidebar'
-import { ALL_MENU } from '../graphql/query'
-import { AllMenu } from '../interface/allMenu'
+import Layout from '../components/Layout'
 
 const Home = () => {
-  const { data } = useQuery<AllMenu>(ALL_MENU)
-
   return (
-    <div>
-      <Navbar />
-      <div className="grid grid-cols-1 lg:grid-cols-6 mt-8 pb-12">
-        <Sidebar />
-        <article className="mt-10 col-span-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:mt-0 2xl:grid-cols-6 justify-items-center gap-y-8 gap-x-2">
-          {data?.allMenu ? (
-            data.allMenu.map((m) => (
-              <Card
-                key={m._id}
-                _id={m._id}
-                name={m.name}
-                quantity={m.quantity}
-                price={m.price}
-                img={m.img}
-              />
-            ))
-          ) : (
-            <h1>Cargando...</h1>
-          )}
-        </article>
+    <Layout>
+      <div className="h-screen w-full">
+        <div className="h-full relative">
+          <div className="background-image"></div>
+          <div className="absolute w-full flex justify-evenly items-center color">
+            <div className="w-2/6">
+              <h2 className="font-bold text-white text-4xl">
+                Disfruta nuestros <br /> Deliciosos Platos
+              </h2>
+              <h3 className="text-white my-4">
+                Si piensas que tu vida está en manos de los dioses, estás
+                equivocado. Está en manos de los cocineros
+              </h3>
+              <Link href="/login">
+                <a className="bg-green-400 text-white py-1 px-4 rounded-lg  self-center border border-green-400 hover:text-green-400 hover:bg-transparent mr-1.5">
+                  Ver la lista del Menu
+                </a>
+              </Link>
+            </div>
+            <img
+              src="https://raw.githubusercontent.com/EasyLearning97/restaurant_html_css/master/img/hero.png"
+              alt="menu principal"
+              className="w-2/6"
+            />
+          </div>
+        </div>
       </div>
-
-      <Footer />
-    </div>
+    </Layout>
   )
 }
 
