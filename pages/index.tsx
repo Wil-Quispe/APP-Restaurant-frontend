@@ -10,7 +10,7 @@ const LayoutSectionBlog = ({
   title: string
 }) => {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center mb-16">
       <div>
         <strong className="text-2xl">{title}</strong>
       </div>
@@ -55,6 +55,20 @@ const MainItems = () => {
       />
       <strong className="text-xl">Lomo Saltado</strong>
       <span className="text-green-400 text-lg">124 $</span>
+    </div>
+  )
+}
+
+const CardChef = () => {
+  return (
+    <div className="flex flex-col justify-center items-center px-6 py-4 shadow-xl border rounded">
+      <img
+        src="https://raw.githubusercontent.com/EasyLearning97/restaurant_html_css/master/img/about-1.jpg"
+        alt=""
+        className="rounded-full w-36"
+      />
+      <strong className="mt-4">Luis Quispe</strong>
+      <h2>Chef Principal</h2>
     </div>
   )
 }
@@ -143,7 +157,13 @@ const Home = () => {
             <MainItems />
           </div>
         </LayoutSectionBlog>
-
+        <LayoutSectionBlog title="Nuestros Maestros Cosineros">
+          <div className="flex w-6/12 justify-evenly mt-5">
+            <CardChef />
+            <CardChef />
+            <CardChef />
+          </div>
+        </LayoutSectionBlog>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
           et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
