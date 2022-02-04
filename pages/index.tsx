@@ -28,6 +28,20 @@ const Card = () => {
   )
 }
 
+const MainItems = () => {
+  return (
+    <div className="flex justify-between items-center w-4/12 rounded-lg shadow-2xl hover:shadow-green-500 px-3 py-1 mb-5">
+      <img
+        src="https://raw.githubusercontent.com/EasyLearning97/restaurant_html_css/master/img/about-1.jpg"
+        alt=""
+        className="w-20 rounded"
+      />
+      <strong className="text-xl">Lomo Saltado</strong>
+      <span className="text-green-400 text-lg">124 $</span>
+    </div>
+  )
+}
+
 const Home = () => {
   return (
     <Layout>
@@ -104,7 +118,17 @@ const Home = () => {
             </div>
           </div>
         </div>
-
+        <div className="flex flex-col items-center">
+          <div>
+            <strong className="text-2xl">Comidas mas Populares</strong>
+          </div>
+          <div className="w-full flex flex-col items-center my-5">
+            <MainItems />
+            <MainItems />
+            <MainItems />
+            <MainItems />
+          </div>
+        </div>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
           et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
