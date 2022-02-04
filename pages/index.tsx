@@ -63,6 +63,458 @@ const Home = () => {
             <Card />
           </div>
         </div>
+        <div className="flex justify-center my-20">
+          <div className="w-3/6 flex justify-between">
+            <div className="grid grid-cols-2 gap-2 w-2/6">
+              <img
+                src="https://raw.githubusercontent.com/EasyLearning97/restaurant_html_css/master/img/about-1.jpg"
+                alt="sobre nosotros"
+              />
+              <img
+                src="https://raw.githubusercontent.com/EasyLearning97/restaurant_html_css/master/img/about-2.jpg"
+                alt="sobre nosotros"
+              />
+              <img
+                src="https://raw.githubusercontent.com/EasyLearning97/restaurant_html_css/master/img/about-3.jpg"
+                alt="sobre nosotros"
+              />
+              <img
+                src="https://raw.githubusercontent.com/EasyLearning97/restaurant_html_css/master/img/about-4.jpg"
+                alt="sobre nosotros"
+              />
+            </div>
+            <div className="flex flex-col items-center w-3/6">
+              <h2 className="text-xl inline">
+                Bienvenido al Restaurant'
+                <strong className="text-green-400 inline"> Menus Pa'ti</strong>
+              </h2>
+
+              <p className="my-3 w-5/6">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint,
+                omnis! Placeat doloribus perspiciatis quo. Recusandae suscipit
+                sunt, doloribus qui
+              </p>
+
+              <div className="border-green-400 border-l-8 rounded-md flex justify-evenly items-center w-3/6 ">
+                <span className="text-3xl font-bold text-green-500">15</span>
+                <h2 className="text-sm">
+                  años de <h3>Experiencia</h3>
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
+          et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
+          possimus vero eligendi a nobis aperiam quisquam.
+        </p>
       </div>
     </Layout>
   )
