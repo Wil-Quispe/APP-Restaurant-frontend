@@ -1,6 +1,23 @@
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { ReactNode, useState } from 'react'
 import Layout from '../components/Layout'
+
+const LayoutSectionBlog = ({
+  children,
+  title,
+}: {
+  children: ReactNode
+  title: string
+}) => {
+  return (
+    <div className="flex flex-col items-center">
+      <div>
+        <strong className="text-2xl">{title}</strong>
+      </div>
+      {children}
+    </div>
+  )
+}
 
 const Card = () => {
   const [hover, setHover] = useState(false)
@@ -118,17 +135,15 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center">
-          <div>
-            <strong className="text-2xl">Comidas mas Populares</strong>
-          </div>
+        <LayoutSectionBlog title="Comidas mas Populares">
           <div className="w-full flex flex-col items-center my-5">
             <MainItems />
             <MainItems />
             <MainItems />
             <MainItems />
           </div>
-        </div>
+        </LayoutSectionBlog>
+
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic aut
           et harum? Dolorum ab id ex saepe omnis recusandae dolore? Odio tempore
