@@ -100,7 +100,7 @@ const Home = () => {
           </div>
         </LayoutSectionBlog>
         <LayoutSectionBlog title="Comentarios">
-          <div className="flex w-4/6">
+          <div className="flex flex-col sm:flex-row w-full  lg:w-4/6">
             <CardComments />
             <CardComments />
             <CardComments />

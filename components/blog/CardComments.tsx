@@ -7,7 +7,7 @@ const CardComments = () => {
     <div
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      className={`flex flex-col justify-between px-4 py-2 mx-5 rounded-md ${
+      className={`flex flex-col justify-between px-4 py-2 mx-5 rounded-md mb-8 sm:m-none ${
         hover ? 'bg-green-400' : 'bg-gray-100'
       }`}
     >
