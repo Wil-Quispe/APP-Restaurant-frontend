@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React, { ReactNode, useState } from 'react'
+import Footer from '../components/Footer'
 import Layout from '../components/Layout'
 
 const LayoutSectionBlog = ({
@@ -10,8 +11,8 @@ const LayoutSectionBlog = ({
   title: string
 }) => {
   return (
-    <div className="flex flex-col items-center mb-16">
-      <div>
+    <div className="flex flex-col items-center mb-52">
+      <div className="mb-12">
         <strong className="text-2xl">{title}</strong>
       </div>
       {children}
@@ -61,13 +62,13 @@ const MainItems = () => {
 
 const CardChef = () => {
   return (
-    <div className="flex flex-col justify-center items-center px-6 py-4 shadow-xl border rounded">
+    <div className="flex flex-col justify-center items-center px-6 py-4 hover:shadow-xl border rounded">
       <img
         src="https://raw.githubusercontent.com/EasyLearning97/restaurant_html_css/master/img/about-1.jpg"
         alt=""
         className="rounded-full w-36"
       />
-      <strong className="mt-4">Luis Quispe</strong>
+      <strong className="mt-4 text-green-500">Luis Quispe</strong>
       <h2>Chef Principal</h2>
     </div>
   )
@@ -140,14 +141,14 @@ const Home = () => {
             />
           </div>
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center mb-52">
           <div className="w-4/6 flex justify-evenly">
             <Card />
             <Card />
             <Card />
           </div>
         </div>
-        <div className="flex justify-center my-20">
+        <div className="flex justify-center mb-52">
           <div className="w-3/6 flex justify-between">
             <div className="grid grid-cols-2 gap-2 w-2/6">
               <img
@@ -189,7 +190,7 @@ const Home = () => {
           </div>
         </div>
         <LayoutSectionBlog title="Comidas mas Populares">
-          <div className="w-full flex flex-col items-center my-5">
+          <div className="w-full flex flex-col items-center">
             <MainItems />
             <MainItems />
             <MainItems />
@@ -197,7 +198,7 @@ const Home = () => {
           </div>
         </LayoutSectionBlog>
         <LayoutSectionBlog title="Nuestros Maestros Cosineros">
-          <div className="flex w-6/12 justify-evenly mt-5">
+          <div className="flex w-6/12 justify-evenly">
             <CardChef />
             <CardChef />
             <CardChef />
@@ -210,22 +211,7 @@ const Home = () => {
             <CardComments />
           </div>
         </LayoutSectionBlog>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+        <Footer />
       </div>
     </Layout>
   )
