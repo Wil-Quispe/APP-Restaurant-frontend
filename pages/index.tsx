@@ -1,117 +1,12 @@
 import Link from 'next/link'
-import React, { ReactNode, useState } from 'react'
+import React from 'react'
+import CardChef from '../components/blog/CardChef'
+import CardComments from '../components/blog/CardComments'
+import CardService from '../components/blog/CartService'
+import LayoutSectionBlog from '../components/blog/LayoutSectionBlog'
+import MainItems from '../components/blog/MainItems'
 import Footer from '../components/Footer'
 import Layout from '../components/Layout'
-
-const LayoutSectionBlog = ({
-  children,
-  title,
-}: {
-  children: ReactNode
-  title: string
-}) => {
-  return (
-    <div className="flex flex-col items-center mb-52">
-      <div className="mb-12">
-        <strong className="text-2xl">{title}</strong>
-      </div>
-      {children}
-    </div>
-  )
-}
-
-const Card = () => {
-  const [hover, setHover] = useState(false)
-
-  return (
-    <div
-      onMouseLeave={() => setHover(false)}
-      onMouseEnter={() => setHover(true)}
-      className={`${
-        hover && 'bg-green-400'
-      } flex flex-col w-64 px-7 py-5 border rounded-lg shadow-2xl items-center`}
-    >
-      <h2
-        className={`${
-          hover ? 'text-white' : 'text-green-400'
-        } font-bold text-xl mb-3`}
-      >
-        Chef Principal
-      </h2>
-      <p className={`${hover && 'text-white'}`}>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate est
-        repellendus vitae. Recusandae velit, modi incidunt quidem voluptatem
-      </p>
-    </div>
-  )
-}
-
-const MainItems = () => {
-  return (
-    <div className="flex justify-between items-center w-4/12 rounded-lg shadow-2xl hover:shadow-green-500 px-3 py-1 mb-5">
-      <img
-        src="https://raw.githubusercontent.com/EasyLearning97/restaurant_html_css/master/img/about-1.jpg"
-        alt=""
-        className="w-20 rounded"
-      />
-      <strong className="text-xl">Lomo Saltado</strong>
-      <span className="text-green-400 text-lg">124 $</span>
-    </div>
-  )
-}
-
-const CardChef = () => {
-  return (
-    <div className="flex flex-col justify-center items-center px-6 py-4 hover:shadow-xl border rounded">
-      <img
-        src="https://raw.githubusercontent.com/EasyLearning97/restaurant_html_css/master/img/about-1.jpg"
-        alt=""
-        className="rounded-full w-36"
-      />
-      <strong className="mt-4 text-green-500">Luis Quispe</strong>
-      <h2>Chef Principal</h2>
-    </div>
-  )
-}
-
-const CardComments = () => {
-  const [hover, setHover] = useState(false)
-
-  return (
-    <div
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      className={`flex flex-col justify-between px-4 py-2 mx-5 rounded-md ${
-        hover ? 'bg-green-400' : 'bg-gray-100'
-      }`}
-    >
-      <div>
-        <h3 className={`${hover && 'text-white'}`}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur
-          atque Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Consequatur atque
-        </h3>
-      </div>
-      <div className="flex self-center mt-4">
-        <div>
-          <img
-            src="https://raw.githubusercontent.com/EasyLearning97/restaurant_html_css/master/img/testimonial-1.jpg"
-            className="rounded-full w-10 mr-2"
-            alt=""
-          />
-        </div>
-        <div>
-          <h3
-            className={`font-bold ${hover ? 'text-white' : 'text-green-500'}`}
-          >
-            Luis Quispe
-          </h3>
-          <h3 className={`${hover && 'text-white'}`}>IT person</h3>
-        </div>
-      </div>
-    </div>
-  )
-}
 
 const Home = () => {
   return (
@@ -143,9 +38,9 @@ const Home = () => {
         </div>
         <div className="flex justify-center mb-52">
           <div className="w-4/6 flex justify-evenly">
-            <Card />
-            <Card />
-            <Card />
+            <CardService />
+            <CardService />
+            <CardService />
           </div>
         </div>
         <div className="flex justify-center mb-52">
