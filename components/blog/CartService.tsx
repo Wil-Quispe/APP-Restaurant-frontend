@@ -9,7 +9,7 @@ const CardService = () => {
       onMouseEnter={() => setHover(true)}
       className={`${
         hover && 'bg-green-400'
-      } flex flex-col w-64 px-7 py-5 border rounded-lg shadow-2xl items-center`}
+      } flex flex-col w-64 px-7 py-5 border rounded-lg shadow-2xl items-center mb-8 mx-2 sm:mb-0`}
     >
       <h2
         className={`${

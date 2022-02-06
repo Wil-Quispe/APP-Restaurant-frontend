@@ -37,7 +37,7 @@ const Home = () => {
           </div>
         </div>
         <div className="flex justify-center mb-52">
-          <div className="w-4/6 flex justify-evenly">
+          <div className="flex flex-col justify-evenly sm:flex-row sm:w-11/12 lg:w-4/6">
             <CardService />
             <CardService />
             <CardService />
@@ -100,7 +100,7 @@ const Home = () => {
           </div>
         </LayoutSectionBlog>
         <LayoutSectionBlog title="Comentarios">
-          <div className="flex flex-col sm:flex-row w-full  lg:w-4/6">
+          <div className="flex flex-col sm:flex-row w-full lg:w-4/6">
             <CardComments />
             <CardComments />
             <CardComments />
