@@ -85,7 +85,7 @@ const Home = () => {
           </div>
         </div>
         <LayoutSectionBlog title="Comidas mas Populares">
-          <div className="w-full flex flex-col items-center">
+          <div className="flex flex-col w-11/12 sm:w-3/6">
             <MainItems />
             <MainItems />
             <MainItems />
