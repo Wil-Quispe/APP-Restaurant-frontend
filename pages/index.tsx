@@ -14,12 +14,17 @@ const Home = () => {
       <div className="h-screen w-full">
         <div className="h-full relative">
           <div className="background-image"></div>
-          <div className="absolute w-full flex justify-evenly items-center color">
-            <div className="w-2/6">
+          <div className="absolute w-full flex flex-col sm:flex-row sm:justify-evenly justify-center items-center color">
+            <img
+              src="https://raw.githubusercontent.com/EasyLearning97/restaurant_html_css/master/img/hero.png"
+              alt="menu principal"
+              className="w-9/12 sm:w-2/6"
+            />
+            <div className="flex flex-col items-center w-11/12 sm:w-2/6">
               <h2 className="font-bold text-white text-4xl">
                 Disfruta nuestros <br /> Deliciosos Platos
               </h2>
-              <h3 className="text-white my-4">
+              <h3 className="text-white my-4 text-center">
                 Si piensas que tu vida está en manos de los dioses, estás
                 equivocado. Está en manos de los cocineros
               </h3>
@@ -29,11 +34,6 @@ const Home = () => {
                 </a>
               </Link>
             </div>
-            <img
-              src="https://raw.githubusercontent.com/EasyLearning97/restaurant_html_css/master/img/hero.png"
-              alt="menu principal"
-              className="w-2/6"
-            />
           </div>
         </div>
         <div className="flex justify-center mb-52">
