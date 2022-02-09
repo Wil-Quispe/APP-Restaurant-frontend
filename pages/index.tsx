@@ -44,8 +44,8 @@ const Home = () => {
           </div>
         </div>
         <div className="flex justify-center mb-52">
-          <div className="w-3/6 flex justify-between">
-            <div className="grid grid-cols-2 gap-2 w-2/6">
+          <div className="flex flex-col items-center md:flex-row md:justify-between md:w-5/6 lg:w-3/6">
+            <div className="grid grid-cols-2 gap-2 w-2/6 mb-8">
               <img
                 src="https://raw.githubusercontent.com/EasyLearning97/restaurant_html_css/master/img/about-1.jpg"
                 alt="sobre nosotros"
@@ -63,13 +63,13 @@ const Home = () => {
                 alt="sobre nosotros"
               />
             </div>
-            <div className="flex flex-col items-center w-3/6">
+            <div className="flex flex-col items-center md:w-3/6">
               <h2 className="text-xl inline">
                 Bienvenido al Restaurant'
                 <strong className="text-green-400 inline"> Menus Pa'ti</strong>
               </h2>
 
-              <p className="my-3 w-5/6">
+              <p className="my-3 w-5/6 text-center">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint,
                 omnis! Placeat doloribus perspiciatis quo. Recusandae suscipit
                 sunt, doloribus qui
