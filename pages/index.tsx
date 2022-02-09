@@ -93,7 +93,7 @@ const Home = () => {
           </div>
         </LayoutSectionBlog>
         <LayoutSectionBlog title="Nuestros Maestros Cosineros">
-          <div className="flex w-6/12 justify-evenly">
+          <div className="flex flex-col sm:flex-row sm:w-8/12 sm:justify-evenly">
             <CardChef />
             <CardChef />
             <CardChef />
