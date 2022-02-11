@@ -16,7 +16,6 @@ import { AllMenu } from '../interface/allMenu'
 const Home = () => {
   const { data: dataPopularItems } = useQuery<AllMenu>(ALL_MENU)
 
-
   return (
     <Layout>
       <div className="h-screen w-full">
@@ -54,7 +53,7 @@ const Home = () => {
         </div>
         <div className="flex justify-center mb-52">
           <div className="flex flex-col items-center md:flex-row md:justify-between md:w-5/6 lg:w-3/6">
-            <div className="grid grid-cols-2 gap-2 w-2/6 mb-8">
+            <div className="grid grid-cols-2 gap-2 w-4/6 sm:w-2/6 mb-8">
               <img
                 src="https://raw.githubusercontent.com/EasyLearning97/restaurant_html_css/master/img/about-1.jpg"
                 alt="sobre nosotros"
