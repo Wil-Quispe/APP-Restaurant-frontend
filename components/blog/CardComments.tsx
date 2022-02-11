@@ -1,6 +1,14 @@
 import { useState } from 'react'
 
-const CardComments = () => {
+const CardComments = ({
+  name,
+  body,
+  ocupation,
+}: {
+  name: string
+  body: string
+  ocupation: string
+}) => {
   const [hover, setHover] = useState(false)
 
   return (
@@ -12,27 +20,23 @@ const CardComments = () => {
       }`}
     >
       <div>
-        <h3 className={`${hover && 'text-white'}`}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur
-          atque Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Consequatur atque
-        </h3>
+        <h3 className={`${hover && 'text-white'}`}>{body}</h3>
       </div>
       <div className="flex self-center mt-4">
         <div>
           <img
             src="https://raw.githubusercontent.com/EasyLearning97/restaurant_html_css/master/img/testimonial-1.jpg"
             className="rounded-full w-10 mr-2"
-            alt=""
+            alt={name}
           />
         </div>
         <div>
           <h3
             className={`font-bold ${hover ? 'text-white' : 'text-green-500'}`}
           >
-            Luis Quispe
+            {name}
           </h3>
-          <h3 className={`${hover && 'text-white'}`}>IT person</h3>
+          <h3 className={`${hover && 'text-white'}`}>{ocupation}</h3>
         </div>
       </div>
     </div>

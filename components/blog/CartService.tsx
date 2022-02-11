@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const CardService = () => {
+const CardService = ({ title, text }: { title: string; text: string }) => {
   const [hover, setHover] = useState(false)
 
   return (
@@ -16,11 +16,13 @@ const CardService = () => {
           hover ? 'text-white' : 'text-green-400'
         } font-bold text-xl mb-3`}
       >
-        Chef Principal
+        {/* Chef Principal */}
+        {title}
       </h2>
       <p className={`${hover && 'text-white'}`}>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate est
-        repellendus vitae. Recusandae velit, modi incidunt quidem voluptatem
+        {/* Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate est
+        repellendus vitae. Recusandae velit, modi incidunt quidem voluptatem */}
+        {text}
       </p>
     </div>
   )

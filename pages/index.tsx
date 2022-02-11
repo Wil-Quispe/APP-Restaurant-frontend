@@ -1,3 +1,4 @@
+import { useQuery } from '@apollo/client'
 import Link from 'next/link'
 import React from 'react'
 import CardChef from '../components/blog/CardChef'
@@ -8,7 +9,14 @@ import MainItems from '../components/blog/MainItems'
 import Footer from '../components/Footer'
 import Layout from '../components/Layout'
 
+import Data from '../data.json'
+import { ALL_MENU } from '../graphql/query'
+import { AllMenu } from '../interface/allMenu'
+
 const Home = () => {
+  const { data: dataPopularItems } = useQuery<AllMenu>(ALL_MENU)
+
+
   return (
     <Layout>
       <div className="h-screen w-full">
@@ -28,7 +36,7 @@ const Home = () => {
                 Si piensas que tu vida está en manos de los dioses, estás
                 equivocado. Está en manos de los cocineros
               </h3>
-              <Link href="/login">
+              <Link href="/comidas">
                 <a className="bg-green-400 text-white py-1 px-4 rounded-lg  self-center border border-green-400 hover:text-green-400 hover:bg-transparent mr-1.5">
                   Ver la lista del Menu
                 </a>
@@ -38,9 +46,10 @@ const Home = () => {
         </div>
         <div className="flex justify-center mb-52">
           <div className="flex flex-col justify-evenly sm:flex-row sm:w-11/12 lg:w-4/6">
-            <CardService />
-            <CardService />
-            <CardService />
+            {Data &&
+              Data.services.map((s) => (
+                <CardService text={s.text} title={s.title} />
+              ))}
           </div>
         </div>
         <div className="flex justify-center mb-52">
@@ -70,9 +79,9 @@ const Home = () => {
               </h2>
 
               <p className="my-3 w-5/6 text-center">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint,
-                omnis! Placeat doloribus perspiciatis quo. Recusandae suscipit
-                sunt, doloribus qui
+                Unos de los restaurants mas populares y favoritos por las
+                personas de nuestra zona con clientes bastante reconocidos y
+                encantados con nuestra sazon
               </p>
 
               <div className="border-green-400 border-l-8 rounded-md flex justify-evenly items-center w-3/6 ">
@@ -86,24 +95,32 @@ const Home = () => {
         </div>
         <LayoutSectionBlog title="Comidas mas Populares">
           <div className="flex flex-col w-11/12 sm:w-3/6">
-            <MainItems />
-            <MainItems />
-            <MainItems />
-            <MainItems />
+            {dataPopularItems &&
+              dataPopularItems.allMenu
+                .slice(0, 4)
+                .map((m) => (
+                  <MainItems img={m.img} name={m.name} price={m.price} />
+                ))}
           </div>
         </LayoutSectionBlog>
         <LayoutSectionBlog title="Nuestros Maestros Cosineros">
           <div className="flex flex-col sm:flex-row sm:w-8/12 sm:justify-evenly">
-            <CardChef />
-            <CardChef />
-            <CardChef />
+            {Data &&
+              Data.team.map((m) => (
+                <CardChef name={m.name} ocupation={m.ocupation} />
+              ))}
           </div>
         </LayoutSectionBlog>
         <LayoutSectionBlog title="Comentarios">
           <div className="flex flex-col sm:flex-row w-full lg:w-4/6">
-            <CardComments />
-            <CardComments />
-            <CardComments />
+            {Data &&
+              Data.comments.map((c) => (
+                <CardComments
+                  name={c.name}
+                  body={c.body}
+                  ocupation={c.ocupation}
+                />
+              ))}
           </div>
         </LayoutSectionBlog>
         <Footer />
