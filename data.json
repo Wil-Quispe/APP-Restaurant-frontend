@@ -1,0 +1,48 @@
+{
+  "services": [
+    {
+      "title": "Masters Chefs",
+      "text": "Uno de nuestros mejores chefs que cosina bien rico con su toque vastante especial para todos nuestro clientes"
+    },
+    {
+      "title": "Calidad",
+      "text": "Nuestra comida esta hecha con los ingredientes mas selectas y mejor cuidado en la preparacion"
+    },
+    {
+      "title": "Servicio",
+      "text": "Nuestros servicios son de lunes a sabados puede venir con toda la familia incluido parking gratis"
+    }
+  ],
+  "team": [
+    {
+      "name": "Rayan Reinols",
+      "ocupation": "Master Chef"
+    },
+    {
+      "name": "Michael Bozz",
+      "ocupation": "Mozo"
+    },
+    {
+      "name": "Brayan Mark",
+      "ocupation": "Master Chef"
+    }
+  ],
+  "comments": [
+    {
+      "name": "Brayan Mark",
+      "body": "Uno de las mejores Restaurants y buena atencion sigan asi.",
+      "ocupation": "estudiante"
+    },
+    {
+      "name": "Alvert Cruz",
+      "body": "Buen restaurante buena calida buen precio.",
+      "ocupation": "musico"
+
+    },
+    {
+      "name": "Brayan Mark",
+      "body": "Exelente atencion pero le falta un poco mas de espacio en la cochera.",
+      "ocupation": "estudiante"
+    }
+  ]
+}

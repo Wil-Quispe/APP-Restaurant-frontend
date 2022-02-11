@@ -1,0 +1,12 @@
+.background-image {
+  position: absolute;
+  background-image: url('https://raw.githubusercontent.com/EasyLearning97/restaurant_html_css/master/img/bg-hero.jpg');
+  background-position: center;
+  width: 100%;
+  height: calc(100% - 64px);
+}
+
+.color {
+  background-color: rgba(21, 41, 68, 0.699);
+  height: calc(100% - 64px);
+}

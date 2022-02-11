@@ -111,6 +111,7 @@ const Navbar = () => {
           <div className="hidden sm:block sm:ml-6">
             <div className="flex">
               <ActiveLink text="Inicio" href="/" />
+              <ActiveLink text="Comidas" href="/comidas" />
               <ActiveLink text="Costa" href="/costa" />
               <ActiveLink text="Sierra" href="/sierra" />
               <ActiveLink text="Selva" href="/selva" />
@@ -163,6 +164,7 @@ const Navbar = () => {
       >
         <div className="px-2 pt-2 pb-3 space-y-1  flex flex-col justify-center">
           <ActiveLink text="Inicio" href="/" />
+          <ActiveLink text="Comidas" href="/comidas" />
           <ActiveLink text="Costa" href="/costa" />
           <ActiveLink text="Sierra" href="/sierra" />
           <ActiveLink text="Selva" href="/selva" />
