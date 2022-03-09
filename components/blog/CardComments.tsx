@@ -4,10 +4,12 @@ const CardComments = ({
   name,
   body,
   ocupation,
+  img,
 }: {
   name: string
   body: string
   ocupation: string
+  img: string
 }) => {
   const [hover, setHover] = useState(false)
 
@@ -24,11 +26,7 @@ const CardComments = ({
       </div>
       <div className="flex self-center mt-4">
         <div>
-          <img
-            src="https://raw.githubusercontent.com/EasyLearning97/restaurant_html_css/master/img/testimonial-1.jpg"
-            className="rounded-full w-10 mr-2"
-            alt={name}
-          />
+          <img src={img} className="rounded-full w-10 mr-2" alt={name} />
         </div>
         <div>
           <h3
