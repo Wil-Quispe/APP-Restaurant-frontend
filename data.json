@@ -16,15 +16,20 @@
   "team": [
     {
       "name": "Rayan Reinols",
-      "ocupation": "Master Chef"
+      "ocupation": "Master Chef",
+      "img": "https://raw.githubusercontent.com/EasyLearning97/restaurant_html_css/master/img/team-1.jpg"
     },
     {
       "name": "Michael Bozz",
-      "ocupation": "Mozo"
+      "ocupation": "Mozo",
+      "img": "https://raw.githubusercontent.com/EasyLearning97/restaurant_html_css/master/img/team-2.jpg"
+
     },
     {
       "name": "Brayan Mark",
-      "ocupation": "Master Chef"
+      "ocupation": "Master Chef",
+      "img": "https://raw.githubusercontent.com/EasyLearning97/restaurant_html_css/master/img/team-3.jpg"
+
     }
   ],
   "comments": [

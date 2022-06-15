@@ -106,7 +106,7 @@ const Home = () => {
           <div className="flex flex-col sm:flex-row sm:w-8/12 sm:justify-evenly">
             {Data &&
               Data.team.map((m) => (
-                <CardChef name={m.name} ocupation={m.ocupation} />
+                <CardChef name={m.name} ocupation={m.ocupation} img={m.img} />
               ))}
           </div>
         </LayoutSectionBlog>
