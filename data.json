@@ -36,18 +36,24 @@
     {
       "name": "Brayan Mark",
       "body": "Uno de las mejores Restaurants y buena atencion sigan asi.",
-      "ocupation": "estudiante"
+      "ocupation": "estudiante",
+      "img": "https://github.com/EasyLearning97/restaurant_html_css/blob/master/img/testimonial-1.jpg?raw=true"
+
     },
     {
       "name": "Alvert Cruz",
       "body": "Buen restaurante buena calida buen precio.",
-      "ocupation": "musico"
+      "ocupation": "musico",
+      "img": "https://github.com/EasyLearning97/restaurant_html_css/blob/master/img/testimonial-2.jpg?raw=true"
 
     },
     {
       "name": "Brayan Mark",
       "body": "Exelente atencion pero le falta un poco mas de espacio en la cochera.",
-      "ocupation": "estudiante"
+      "ocupation": "estudiante",
+      "img": "https://github.com/EasyLearning97/restaurant_html_css/blob/master/img/testimonial-3.jpg?raw=true"
+
+
     }
   ]
 }

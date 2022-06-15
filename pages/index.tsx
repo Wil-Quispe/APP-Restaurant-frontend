@@ -118,6 +118,7 @@ const Home = () => {
                   name={c.name}
                   body={c.body}
                   ocupation={c.ocupation}
+                  img={c.img}
                 />
               ))}
           </div>
