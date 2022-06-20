@@ -1,15 +1,17 @@
 import Link from 'next/link'
-import { FormEvent } from 'react'
+import { FormEvent, useContext } from 'react'
 import Form from '../components/common/Form'
 import Input from '../components/common/Input'
 import Layout from '../components/Layout'
 import { useMutation } from '@apollo/client'
 import { SIGNUP } from '../graphql/mutation'
 import { useRouter } from 'next/router'
+import { LogInContext } from '../context/LogInState'
 
 const registro = () => {
   const [signUp] = useMutation(SIGNUP)
   const router = useRouter()
+  const { dispatch } = useContext(LogInContext)
 
   const signUpAction = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -27,9 +29,14 @@ const registro = () => {
     const res = await signUp({ variables: { name, email, password } })
 
     if (res.data.signUp.signUp) {
-      if (typeof window !== undefined) {
-        localStorage.setItem('liveKeyAuth', `1-${res.data.signUp.token}`)
-      }
+      dispatch({
+        type: 'changeAll',
+        payload: {
+          liveKeyAuth: `1-${res.data.signUp.token}`,
+          logged: true,
+          name: '',
+        },
+      })
       router.push('/')
       return
     }
@@ -38,19 +45,19 @@ const registro = () => {
   }
   return (
     <Layout>
-      <div className="h-screen">
-        <div className="flex flex-col items-center">
-          <Form action={signUpAction} text="Registro">
-            <Input text="Nombre" name="name" />
-            <Input text="Correo" name="email" />
-            <Input text="Contraseña" name="password" type="password" />
-            <button className="bg-green-400 text-white py-1 px-4 rounded-lg  self-center border border-green-400 hover:text-green-400 hover:bg-transparent mr-1.5">
+      <div className='h-screen'>
+        <div className='flex flex-col items-center'>
+          <Form action={signUpAction} text='Registro'>
+            <Input text='Nombre' name='name' />
+            <Input text='Correo' name='email' />
+            <Input text='Contraseña' name='password' type='password' />
+            <button className='bg-green-400 text-white py-1 px-4 rounded-lg  self-center border border-green-400 hover:text-green-400 hover:bg-transparent mr-1.5'>
               Crear cuenta
             </button>
           </Form>
 
-          <Link href="/login">
-            <a className="text-blue-400">Ir a Login</a>
+          <Link href='/login'>
+            <a className='text-blue-400'>Ir a Login</a>
           </Link>
         </div>
       </div>
